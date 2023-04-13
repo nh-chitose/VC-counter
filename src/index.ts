@@ -20,13 +20,14 @@ client.on("ready", async () => {
   ]).catch(e => console.log(e));
 });
 
-setInterval(() => {
-  const guilds = client.guilds.keys();
-  for(const guild of guilds){
+client.on("ready", async () =>{
+// setInterval(() => {
+  const guilds = client.guilds.map(a => a.id);
+   for(const guild of guilds){
     let nop = 0;
-    const ch = client.guilds.channels.filter(ch => ch.guild === guild);
-    const voiceCh = ch.filter(ch => ch.isVoice());
-    voiceCh.forEach(ch => nop += ch.members.size);
+    const voiceCh = client.guilds.get(guild).channels.filter(a => a.type === discord.ChannelTypes.GUILD_VOICE);
+    console.log(voiceCh);/*
+    voiceCh.forEach(ch => nop += ch.voiceMembers.size);
     console.log(nop);
     const counter = ch.find(ch => ch.name.match(/^VC接続人数:/));
     try{
@@ -34,8 +35,8 @@ setInterval(() => {
     } catch(e){
       console.log(e);
     }
-  }
+  }*/
   console.log("Refreshed!");
-}, 360000);
-
+//}, 360000);
+}});
 client.connect().catch(e => console.log(e));
