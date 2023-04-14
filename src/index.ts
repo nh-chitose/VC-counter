@@ -6,6 +6,7 @@ const client = new discord.Client({
   gateway: {
     intents: [
       "GUILDS",
+      "GUILD_MEMBERS",
     ],
   },
 });
@@ -35,7 +36,5 @@ setInterval(() => {
   }
   console.log("Refreshed!");
 }, 360000); // 6 mins
-client.on("error", (err) => {
-  console.error("Something Broke!", err);
-});
+
 client.connect().catch(e => console.log(e));
