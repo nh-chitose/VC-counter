@@ -35,5 +35,7 @@ setInterval(() => {
   }
   console.log("Refreshed!");
 }, 360000); // 6 mins
-
+client.on("error", (err) => {
+  console.error("Something Broke!", err);
+});
 client.connect().catch(e => console.log(e));
