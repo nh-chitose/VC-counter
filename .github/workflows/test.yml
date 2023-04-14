@@ -76,16 +76,6 @@ jobs:
       - name: Build
         run: npm run build
 
-  test:
-   runs-on: ubuntu-latest
-   needs:
-    - build
-   strategy:
-     matrix:
-       node-version:
-         - '16.x'
-         - '18.x'
-
    steps:
      - uses: actions/checkout@v3
        
