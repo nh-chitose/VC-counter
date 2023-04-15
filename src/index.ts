@@ -6,7 +6,7 @@ const client = new discord.Client({
   gateway: {
     intents: [
       "GUILDS",
-      "GUILD_MEMBERS",
+      "GUILD_VOICE_STATES",
     ],
   },
 });
