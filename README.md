@@ -55,4 +55,4 @@ npm run start
 
 2022/10/28 Release v1.0.0
 
-2023/04/14 TypeScript + oceanic.jsに変更 v1.1.0
+2023/04/15 TypeScript + oceanic.jsに変更 v1.1.0
